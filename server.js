@@ -79,7 +79,7 @@ const TOOLS = {
   },
   build_landing_page: {
     module: 'website', sensitive: false, doc: 'params {title} creates a DRAFT page',
-    run: p => ({ id: ex('INSERT INTO pages(slug,title,blocks) VALUES(?,?,?)', slug(p.title), p.title,
+    run: p => ({ id: ex('INSERT INTO pages(slug,title,blocks) VALUES(?,?,?)', slug(p.title) + '-' + Date.now().toString(36), p.title,
       JSON.stringify(['hero', 'lead_form', 'webinar_countdown'])).lastInsertRowid }),
     undo: r => ex('DELETE FROM pages WHERE id=?', r.id)
   },

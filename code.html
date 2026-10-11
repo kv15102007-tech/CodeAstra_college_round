@@ -106,6 +106,7 @@
     ::-webkit-scrollbar-thumb:hover {
       background: rgba(125, 211, 252, 0.4);
     }
+      html:not(.dark) { filter: invert(1) hue-rotate(180deg); }
   </style>
 </head>
 <body class="bg-background text-on-surface font-body min-h-screen selection:bg-primary-container selection:text-primary flex flex-col antialiased relative overflow-x-hidden">
@@ -153,6 +154,7 @@
         </button>
 <!-- Icon Actions: dark_mode, notifications, smart_toy -->
 <div class="flex items-center gap-1 border-l border-primary/15 pl-2 ml-1">
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-bright/50 transition-all duration-200 active:scale-95" onclick="toggleTheme()" title="Toggle theme"><span class="material-symbols-outlined text-lg" id="themeIcon">dark_mode</span></button>
 
 <button class="p-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-bright/50 transition-all duration-200 relative active:scale-95" onclick="showNotificationToast('All 8 automated workflows operational. Zero anomalies.')" title="Notifications">
 <span class="material-symbols-outlined text-lg">notifications</span>
@@ -481,27 +483,8 @@
 <span class="text-xs uppercase tracking-wider text-error font-semibold">The Disconnected Tool Paradox</span>
 <h2 class="font-headline font-bold text-2xl sm:text-3xl text-on-surface mt-2">Why modern SaaS stacks are secretly draining your company</h2>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-<div class="p-6 rounded-2xl bg-surface/60 backdrop-blur-xl border border-primary/10 flex flex-col justify-between">
-<div>
-<span class="text-xs font-semibold text-on-surface-variant uppercase tracking-wider">Free for Startups</span>
-<div class="mt-3 flex items-baseline gap-1">
-<span class="text-3xl font-extrabold text-on-surface" id="price-free">$0</span>
-<span class="text-xs text-on-surface-variant">/ month</span>
-</div>
-<p class="mt-2 text-xs text-on-surface-variant">For early startups &amp; solo founders validating their MVP.</p>
-<ul class="mt-6 space-y-2.5 text-xs text-on-surface border-t border-primary/10 pt-4">
-<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> 1 Website / Landing Page</li>
-<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> CRM up to 500 contacts</li>
-<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> SaaS Billing test sandbox</li>
-<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> 50 AI Agent executions / mo</li>
-<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Community Support</li>
-</ul>
-</div>
-<button class="mt-8 w-full py-2.5 rounded-xl border border-primary/20 text-xs font-semibold text-on-surface hover:bg-surface-bright transition-all" onclick="navigateTo('Dashboard')">
-Get Started Free
-</button>
-</div><div class="p-6 rounded-xl bg-surface/60 backdrop-blur-md border border-primary/10 hover:border-error/30 transition-all">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="p-6 rounded-xl bg-surface/60 backdrop-blur-md border border-primary/10 hover:border-error/30 transition-all">
 <div class="w-10 h-10 rounded-lg bg-error/10 text-error flex items-center justify-center mb-4">
 <span class="material-symbols-outlined text-xl">layers_clear</span>
 </div>
@@ -1368,27 +1351,8 @@ Get Started Free
         </button>
 </div>
 <!-- Plan Builder Cards -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-<div class="p-6 rounded-2xl bg-surface/60 backdrop-blur-xl border border-primary/10 flex flex-col justify-between">
-<div>
-<span class="text-xs font-semibold text-on-surface-variant uppercase tracking-wider">Free for Startups</span>
-<div class="mt-3 flex items-baseline gap-1">
-<span class="text-3xl font-extrabold text-on-surface" id="price-free">$0</span>
-<span class="text-xs text-on-surface-variant">/ month</span>
-</div>
-<p class="mt-2 text-xs text-on-surface-variant">For early startups &amp; solo founders validating their MVP.</p>
-<ul class="mt-6 space-y-2.5 text-xs text-on-surface border-t border-primary/10 pt-4">
-<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> 1 Website / Landing Page</li>
-<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> CRM up to 500 contacts</li>
-<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> SaaS Billing test sandbox</li>
-<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> 50 AI Agent executions / mo</li>
-<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Community Support</li>
-</ul>
-</div>
-<button class="mt-8 w-full py-2.5 rounded-xl border border-primary/20 text-xs font-semibold text-on-surface hover:bg-surface-bright transition-all" onclick="navigateTo('Dashboard')">
-Get Started Free
-</button>
-</div><div class="p-5 rounded-2xl bg-surface/60 backdrop-blur-xl border border-primary/10">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="p-5 rounded-2xl bg-surface/60 backdrop-blur-xl border border-primary/10">
 <span class="text-[11px] font-semibold text-primary uppercase">Model 1</span>
 <h3 class="font-headline font-semibold text-sm text-on-surface mt-1">Flat Monthly Recurring</h3>
 <p class="text-xs text-on-surface-variant mt-1">Single recurring subscription price ($49/mo Starter, $149/mo Growth).</p>
@@ -1500,27 +1464,8 @@ Get Started Free
 </div>
 </div>
 <!-- Campaign Engagement Grid -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-<div class="p-6 rounded-2xl bg-surface/60 backdrop-blur-xl border border-primary/10 flex flex-col justify-between">
-<div>
-<span class="text-xs font-semibold text-on-surface-variant uppercase tracking-wider">Free for Startups</span>
-<div class="mt-3 flex items-baseline gap-1">
-<span class="text-3xl font-extrabold text-on-surface" id="price-free">$0</span>
-<span class="text-xs text-on-surface-variant">/ month</span>
-</div>
-<p class="mt-2 text-xs text-on-surface-variant">For early startups &amp; solo founders validating their MVP.</p>
-<ul class="mt-6 space-y-2.5 text-xs text-on-surface border-t border-primary/10 pt-4">
-<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> 1 Website / Landing Page</li>
-<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> CRM up to 500 contacts</li>
-<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> SaaS Billing test sandbox</li>
-<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> 50 AI Agent executions / mo</li>
-<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check</span> Community Support</li>
-</ul>
-</div>
-<button class="mt-8 w-full py-2.5 rounded-xl border border-primary/20 text-xs font-semibold text-on-surface hover:bg-surface-bright transition-all" onclick="navigateTo('Dashboard')">
-Get Started Free
-</button>
-</div><div class="p-5 rounded-2xl bg-surface/60 backdrop-blur-xl border border-primary/10">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="p-5 rounded-2xl bg-surface/60 backdrop-blur-xl border border-primary/10">
 <span class="text-[11px] text-on-surface-variant font-mono">Campaign #01</span>
 <h4 class="font-headline font-semibold text-sm text-on-surface mt-1">Webinar Pre-Flight Drip</h4>
 <div class="mt-3 space-y-1.5 text-xs">
@@ -2116,4 +2061,6 @@ function toggleTheme() {
     if (icon) icon.textContent = 'dark_mode';
   }
 })();
-</script></body></html>
+</script>
+<script src="nexus-api.js"></script>
+</body></html>
