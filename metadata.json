@@ -1,0 +1,6 @@
+{
+  "name": "Nexus - Modern Business Workspace & Responsive Studio",
+  "description": "All-in-one business workspace with multi-device responsive testing (Mobile, Tablet, Laptop), dedicated Dark Theme column & studio, CRM, Website Builder, Billing, Marketing, Events, and AI Copilot.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
